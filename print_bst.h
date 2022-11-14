@@ -121,7 +121,6 @@ void BinarySearchTree<Key, Value>::printRoot (Node<Key, Value>* root) const
         clippedFinalElements = true;
 
     }
-
     uint16_t finalRowNumElements = (uint16_t)std::pow(2, printedTreeHeight - 1);
     uint16_t finalRowWidth = ((uint16_t)(ELEMENT_WIDTH * finalRowNumElements - PADDING));
 
@@ -132,16 +131,13 @@ void BinarySearchTree<Key, Value>::printRoot (Node<Key, Value>* root) const
     uint8_t nextPlaceHolderVal = 1;
     for(typename BinarySearchTree<Key, Value>::iterator treeIter = this->begin(); treeIter != this->end(); ++treeIter)
     {
-
         if(getNodeDepth(*this, root, treeIter.current_) != -1)
         {
             // note; the iterator will traverse in sorted order so values should get the same placeholders between
             // different calls as long as the tree is the same
             valuePlaceholders.insert(std::make_pair(treeIter->first, nextPlaceHolderVal++));
         }
-
     }
-
     // print tree
     // ----------------------------------------------------------------------
 
